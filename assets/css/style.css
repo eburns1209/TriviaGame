@@ -1,0 +1,32 @@
+body{
+	background-image: "assets/images/savedBytheBell.jpeg";
+}
+
+h1, .jumbotron{
+ 	width: 50%;
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #98A5C1;
+    text-align: center;
+ 	
+ }
+
+h3, #form, .wellJumbotron, #result{
+	width: 50%;
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #98A5C1;
+    text-align: center;
+   	}
+
+ 
+
+ #start, #buttons, a{
+ 	width: 50%;
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #98A5C1;
+ 	padding: 10px;
+    border: solid 5px #ddd;
+	
+ }
