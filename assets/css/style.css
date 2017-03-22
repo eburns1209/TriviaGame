@@ -6,17 +6,19 @@ h1, .jumbotron{
  	width: 50%;
     max-width: 960px;
     margin: 0 auto;
-    background-color: #98A5C1;
+    background-color: #E885C8;
     text-align: center;
+    font-size: 16px;
  	
  }
 
-h3, #form, .wellJumbotron, #result{
+h3, #form, .wrapper, #result{
 	width: 50%;
     max-width: 960px;
     margin: 0 auto;
-    background-color: #98A5C1;
+    background-color: #E885C8;
     text-align: center;
+    font-size: 20px;
    	}
 
  
@@ -25,8 +27,13 @@ h3, #form, .wellJumbotron, #result{
  	width: 50%;
     max-width: 960px;
     margin: 0 auto;
-    background-color: #98A5C1;
+    background-color: #8BC5C5;
  	padding: 10px;
-    border: solid 5px #ddd;
+    /*border: solid 15px #ddd;*/
+    font-size: 20px;
+
+
 	
  }
+
+ 

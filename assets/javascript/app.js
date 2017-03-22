@@ -1,17 +1,6 @@
-$(document).ready(function(){
 
-function timer(){
-	var counter = 30;
-	var count = count - 1;
-	if(count <=0){
-		clearInterval(counter);
-		return;
-	}
-	document.getElementById("seconds").innerHTML=count + " secs";
-};
-timer();
 
-	var questions = [{question: "What city in California did Saved By the Bell take place?", 
+var questions = [{question: "What city in California did Saved By the Bell take place?", 
 			choices: ["Palisades", "Sacramento", "Oakland", "Malibu"],
 			correctAnswer: 0},
 			{question: "What was the first hit by the band Zack Attack?", 
@@ -24,47 +13,86 @@ timer();
 			choices: ["Billy", "Nikki", "Kyle", "Mikey"],
 			correctAnswer: 3}];
 	
+
+$(document).ready(function(){
+
+var timer;
+var counter = 30;
+
+function countDown(){
+	counter = counter - 1;
+
+	if(counter <=0){
+		clearInterval(counter);
+		return;
+	}
+	document.getElementById("start").innerHTML=counter + " secs";
+};
+
+
+
+	
 	 var currentQuestion = 0;
 	 var correctAnswers = 0;
 
-
-function setupOption(){
-	 $("#question").html(parseInt(currentQuestion) + 1 + ". " + questions[currentQuestion].question);
-
 	 var options = questions[currentQuestion].choices;
   	 var formHtml = '';
+  	 var next;
+
+function start(){
+	$(".question").html(parseInt(currentQuestion) + 1 + ". " + questions[currentQuestion].question);
+
+	timer = setInterval(countDown, 1000);
+
+	 
   	 for (var i = 0; i < options.length; i++) {
       formHtml += '<div><input type="radio" name="option" value="' + i + '" id="option' + i + '"><label for="option' + i + '">' +
       questions[currentQuestion].choices[i] + '</label></div><br/>';
 
       }
- 
 
     $('#form').html(formHtml);
-    $("#option").prop('checked', next);//need to check
-  
+    $("#next").prop('checked', true);//need to check
+  	
  };
-
-
 function nextQuestion(){
-	$(document).click(".button");
-	$(document).click(".button").show();
-
-	var options = questions[currentQuestion].choices;
-  	var formHtml = '';
-  	 
+	
+	// $(document).find("#next").click(function(){
+	// 	alert("go");
+	// });
 }
 
-function displayScore() {
 
-    $(document).find("#result").text("You scored: " + correctAnswers + " out of " + questions.length);
+
+//adding up the score
+function done() {
+	//add up the questions
+    
+}
+//displaying the score by checking the answers
+function result(){
+	$(document).find("#result").text("You scored: " + correctAnswers + " out of " + questions.length);
     $(document).find("#result").show();
+
+
 }
 
-setupOption();
-nextQuestion();
-displayScore();
- 
+
+
+
+$("#start").click(function(){
+	start();
+});
+
+$("#next").click(function(){
+	nextQuestion();
+})
+
+
+$("#done").click(function(){
+	result();
+});
+
 
 });
 

@@ -33,25 +33,30 @@
 	<div class="jumbotron">
 
 		  <h1>Can you beat the Bell?</h1>
-		  <div id="clock"></div>
-		  <div id="buttons" class="clear">
-		  		<button id="start">start<span id="seconds"></span></button>
+
+		  <!-- <div id="clock"></div> -->
+		
+		  <div id="start">
+		  		<button id="start">start <span id="seconds"></span></button>
 		  </div>
 		  
 	</div>
 	<!--end header -->
 
 	<!-- questions -->
-	<div class="wellJumbotron">
-		<h3 id="question"></h3>
+	<div class="wrapper">
+			<div class="question"></div>
 			<form id="form">
 
 			</form>
-			<a href="#" id="next" class="button">Next</a>
-  			
-	</div>
 
-	<div id="result"></div>
+			<button id="next">Next</button>
+			<!-- <a href="#" id="next" class="button">Next</a> -->
+  				
+			<div id="done">		
+				<h3 class= "result"></h3>
+			</div>
+	</div>
 	<!-- end questions-->
 
 
