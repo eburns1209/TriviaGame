@@ -1,5 +1,3 @@
-
-
 var questions = [{question: "What city in California did Saved By the Bell take place?", 
 			choices: ["Palisades", "Sacramento", "Oakland", "Malibu"],
 			correctAnswer: 0},
@@ -17,6 +15,8 @@ var questions = [{question: "What city in California did Saved By the Bell take 
 $(document).ready(function(){
 
 var timer;
+var correct = 0;
+var incorrect = 0;
 var counter = 30;
 
 function countDown(){
@@ -34,48 +34,55 @@ function countDown(){
 	
 	 var currentQuestion = 0;
 	 var correctAnswers = 0;
+	 var incorrectAnswers = 0;
 
 	 var options = questions[currentQuestion].choices;
   	 var formHtml = '';
-  	 var next;
+  	 
 
 function start(){
 	$(".question").html(parseInt(currentQuestion) + 1 + ". " + questions[currentQuestion].question);
 
 	timer = setInterval(countDown, 1000);
 
-	 
-  	 for (var i = 0; i < options.length; i++) {
-      formHtml += '<div><input type="radio" name="option" value="' + i + '" id="option' + i + '"><label for="option' + i + '">' +
-      questions[currentQuestion].choices[i] + '</label></div><br/>';
+	 for (var i = 0; i < questions.length; i++){
+	 	formHtml = $("#form").append(questions);
+	 	// questions.push(form);
+		// $("#form").append(options);
 
-      }
-
-    $('#form').html(formHtml);
-    $("#next").prop('checked', true);//need to check
-  	
- };
-function nextQuestion(){
-	
-	// $(document).find("#next").click(function(){
-	// 	alert("go");
-	// });
+	for (var j = 0; j < questions[i].choices.length; j++){
+		$("#form").append("<input type='radio' name='question-" + i + "' value='"
+			+ questions[i].choices[j] + "''>" + questions[i].choices[j]);
+	}
+  }
+ //  	 for (var i = 0; i < options.length; i++) {
+ //      formHtml += '<div><input type="radio" name="option" value="' + i + '" id="option' + i + '"><label for="option' + i + '">' +
+ //      questions[currentQuestion].choices[i] + '</label></div><br/>';
 }
+
+ //    $('#form').html(formHtml);
+ //    $("#next").prop('checked', true);//need to check
+  	
+
+// function nextQuestion(){
+	
+	
+// }
 
 
 
 //adding up the score
-function done() {
-	//add up the questions
+// function done() {
+// 	//add up the questions
     
-}
+// }
 //displaying the score by checking the answers
-function result(){
-	$(document).find("#result").text("You scored: " + correctAnswers + " out of " + questions.length);
-    $(document).find("#result").show();
+// function result(){
+// 	$(document).find("#result").text("You scored: " + correctAnswers + " out of " + questions.length);
+//     $(document).find("#result").show();
 
 
-}
+// }
 
 
 
@@ -84,19 +91,19 @@ $("#start").click(function(){
 	start();
 });
 
-$("#next").click(function(){
-	nextQuestion();
-})
+// $("#next").click(function(){
+// 	nextQuestion();
+// })
 
 
-$("#done").click(function(){
-	result();
+// $("#done").click(function(){
+// 	result();
+// });
+
+
+// };
+
 });
-
-
-});
-
-
 
 
 
