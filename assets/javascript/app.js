@@ -44,14 +44,15 @@ function start(){
 		timer = setInterval(countDown, 1000);
 
 	 	for (var i = 0; i < questions.length; i++){
-	 	formHtml += $("#form").append(questions);
-	 	$(".question").html(parseInt(currentQuestion) + 1 + ". " + questions[currentQuestion].question);
-		formHtml += $("#form").append(questions[i].length);
-	 	
+		 	$(".question").html(parseInt(currentQuestion) + 1 + ". " + questions[currentQuestion].question);
+		 	// formHtml += $("#form").append(questions);
+		 	formHtml += $("#form").append(questions[i].length);
+		 	
+	 		 	
 	 	for (var j = 0; j < questions[i].choices.length; j++){
-		$("#form").append("<input type='radio' name='question-" + i + "' value='"
-			+ questions[i].choices[j] + "''>" + questions[i].choices[j]);
-		}
+			$("#form").append("<input type='radio' name='question-" + i + "' value='"
+				+ questions[i].choices[j] + "''>" + questions[i].choices[j]);
+			}
  		
  		}
  
