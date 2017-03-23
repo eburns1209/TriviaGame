@@ -2,18 +2,23 @@ body{
 	background-image: "assets/images/savedBytheBell.jpeg";
 }
 
-h1, .jumbotron{
- 	width: 50%;
+.jumbotron{
+ 	width: 100%;
     max-width: 960px;
     margin: 0 auto;
+    margin-top: 60px;
     background-color: #E885C8;
     text-align: center;
     font-size: 16px;
  	
  }
 
-h3, #form, .wrapper, #result{
-	width: 50%;
+h1{
+	margin-bottom:  15px;
+}
+
+.wrapper{
+	width: 100%;
     max-width: 960px;
     margin: 0 auto;
     background-color: #E885C8;
@@ -21,6 +26,13 @@ h3, #form, .wrapper, #result{
     font-size: 20px;
    	}
 
+#next{
+	margin-bottom: 15px;
+}
+
+#done{
+	margin-bottom: 5px;
+}
  
 
  #start, #buttons, a{
