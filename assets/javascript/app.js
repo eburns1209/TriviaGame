@@ -1,17 +1,20 @@
-var questions = [{question: "What city in California did Saved By the Bell take place?", 
+var questions = [
+				{question: "What city in California did Saved By the Bell take place?", 
 				choices: ["Palisades", "Sacramento", "Oakland", "Malibu"],
 				correctAnswer: 0},
+
 				{question: "What was the first hit by the band Zack Attack?", 
 				choices: ["Love Me Now", "Friends Forever", "Lovesick", "Did We Ever Have a Chance"],
 				correctAnswer: 3},
+
 				{question: "In 'The Zack Tapes', who is the first person to put a heart necklace on Zack?", 
 				choices: ["Kelly", "Lisa", "Jessie", "Slater"],
 				correctAnswer: 1},
+
 				{question: "Who is NOT a sibling of Kelly Kapowski?", 
 				choices: ["Billy", "Nikki", "Kyle", "Mikey"],
 				correctAnswer: 3}];
 	
-
 $(document).ready(function(){
 
 var timer;
@@ -37,21 +40,23 @@ function countDown(){
 
 	 var options = questions[currentQuestion].choices;
   	 var formHtml = '';
-  	 
+
 
 function start(){
 	
 		timer = setInterval(countDown, 1000);
 
 	 	for (var i = 0; i < questions.length; i++){
-		 	$(".question").html(parseInt(currentQuestion) + 1 + ". " + questions[currentQuestion].question);
-		 	// formHtml += $("#form").append(questions);
-		 	formHtml += $("#form").append(questions[i].length);
+	 		$(".question").html(parseInt(currentQuestion) + 1 + ". " + questions[currentQuestion].question);
+			currentQuestion++
 		 	
+		 	formHtml = $("#form").append(questions[i].question);
+		 	// formHtml += 
+		 	// $("#form").append(questions[i].question);
 	 		 	
 	 	for (var j = 0; j < questions[i].choices.length; j++){
-			$("#form").append("<input type='radio' name='question-" + i + "' value='"
-				+ questions[i].choices[j] + "''>" + questions[i].choices[j]);
+			$("#form").append("<input type='radio' name='question - " + i + "' value='"
+				+ questions[i].choices[j] +  "''>"  + questions[i].choices[j]);
 			}
  		
  		}
