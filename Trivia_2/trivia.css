@@ -1,0 +1,25 @@
+body {
+    font-family: Open Sans;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+#wrapper{
+    text-align: center;
+    background-color: blue;
+    border-width: 1px;
+    margin: 50px;
+    border-radius: 15px;
+
+}
+
+#sub-wrapper {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
